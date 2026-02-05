@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop AB1421 - Sign the Petition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --accent: #e94560;
+            --secondary: #16213e;
+            --light: #f8f9fa;
+            --text: #2d3436;
+            --border: #dfe6e9;
+            --success: #00b894;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(45deg, rgba(233, 69, 96, 0.1) 0%, transparent 100%),
+                repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,.02) 10px, rgba(255,255,255,.02) 20px);
+            pointer-events: none;
+        }
+
+        .alert-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            position: relative;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            position: relative;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            font-weight: 400;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Stats Banner */
+        .stats-banner {
+            background: white;
+            padding: 30px;
+            margin: -40px auto 40px;
+            max-width: 900px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 20px;
+            border-right: 2px solid var(--border);
+        }
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--accent);
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #636e72;
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        /* Main Content */
+        main {
+            padding: 60px 0;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .info-section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+
+        .info-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .bill-number {
+            background: var(--secondary);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            display: inline-block;
+        }
+
+        .concern-list {
+            list-style: none;
+            margin: 25px 0;
+        }
+
+        .concern-list li {
+            padding: 15px 0 15px 40px;
+            position: relative;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .concern-list li:last-child {
+            border-bottom: none;
+        }
+
+        .concern-list li::before {
+            content: '⚠';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+
+        /* Petition Form */
+        .petition-form {
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+            border: 3px solid var(--accent);
+        }
+
+        .petition-form h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        .form-intro {
+            text-align: center;
+            margin-bottom: 35px;
+            color: #636e72;
+            font-size: 1.05rem;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--primary);
+            font-size: 0.95rem;
+        }
+
+        .required {
+            color: var(--accent);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Source Sans 3', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.1);
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .checkbox-group {
+            margin: 25px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: flex-start;
+            font-weight: 400;
+            cursor: pointer;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 12px;
+            margin-top: 4px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 10px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(233, 69, 96, 0.3);
+        }
+
+        .submit-btn:hover {
+            background: #d63850;
+            transform: translateY(-2px);
+            box-shadow: 0 7px 25px rgba(233, 69, 96, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .submit-btn:disabled {
+            background: #95a5a6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background: var(--success);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .success-message h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        /* Share Section */
+        .share-section {
+            background: var(--secondary);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .share-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .share-btn.facebook {
+            background: #1877f2;
+            color: white;
+        }
+
+        .share-btn.twitter {
+            background: #1da1f2;
+            color: white;
+        }
+
+        .share-btn.email {
+            background: #ea4335;
+            color: white;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+
+        .disclaimer {
+            font-size: 0.85rem;
+            opacity: 0.6;
+            max-width: 800px;
+            margin: 20px auto 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .petition-form {
+                padding: 30px 20px;
+            }
+
+            .stats-banner {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .stat {
+                border-right: none;
+                border-bottom: 2px solid var(--border);
+                padding-bottom: 20px;
+            }
+
+            .stat:last-child {
+                border-bottom: none;
+                padding-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="alert-badge">⚡ Action Needed</div>
+            <h1>Stop Bill AB1421</h1>
+            <p class="subtitle">Join thousands of Californians opposing this legislation. Your voice matters.</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="stats-banner">
+            <div class="stat">
+                <span class="stat-number" id="signatureCount">0</span>
+                <span class="stat-label">Signatures</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number" id="goalProgress">0%</span>
+                <span class="stat-label">Of 10,000 Goal</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number" id="daysLeft">15</span>
+                <span class="stat-label">Days Remaining</span>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="content-grid">
+                <!-- Information Section -->
+                <div class="info-section">
+                    <h2>About AB1421</h2>
+                    <div class="bill-number">Assembly Bill 1421</div>
+                    <p style="margin-bottom: 20px;">
+                        This bill poses serious concerns for California residents and businesses. We believe it will have detrimental effects on our community.
+                    </p>
+                    
+                    <h3 style="margin-top: 30px; margin-bottom: 15px; color: var(--accent);">Key Concerns:</h3>
+                    <ul class="concern-list">
+                        <li><strong>Economic Impact:</strong> Could negatively affect local businesses and job creation</li>
+                        <li><strong>Individual Rights:</strong> May infringe on personal freedoms and privacy</li>
+                        <li><strong>Community Effects:</strong> Could harm the fabric of our neighborhoods</li>
+                        <li><strong>Implementation Costs:</strong> Unclear funding and resource allocation</li>
+                        <li><strong>Legal Concerns:</strong> Potential constitutional and procedural issues</li>
+                    </ul>
+
+                    <p style="margin-top: 25px; padding: 20px; background: #fff3cd; border-left: 4px solid #ffc107; border-radius: 5px;">
+                        <strong>⏰ Time is Running Out:</strong> The bill is moving through the legislature quickly. We need your signature to show strong opposition.
+                    </p>
+                </div>
+
+                <!-- Petition Form -->
+                <div class="petition-form">
+                    <h2>Sign the Petition</h2>
+                    <p class="form-intro">Add your voice to oppose AB1421. Your information will be used solely for this petition.</p>
+                    
+                    <form id="petitionForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>First Name <span class="required">*</span></label>
+                                <input type="text" id="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name <span class="required">*</span></label>
+                                <input type="text" id="lastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Phone Number (Optional)</label>
+                            <input type="tel" id="phone">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>City <span class="required">*</span></label>
+                                <input type="text" id="city" required>
+                            </div>
+                            <div class="form-group">
+                                <label>ZIP Code <span class="required">*</span></label>
+                                <input type="text" id="zipCode" required pattern="[0-9]{5}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Why are you opposing AB1421? (Optional)</label>
+                            <textarea id="comments" placeholder="Share your concerns..."></textarea>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" id="consent" required>
+                                <span>I agree to electronically sign this petition and understand my information will be shared with relevant legislators and officials. <span class="required">*</span></span>
+                            </label>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" id="updates">
+                                <span>Send me updates about this petition and related legislative actions</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Sign Petition Now</button>
+
+                        <div class="success-message" id="successMessage">
+                            <h3>✓ Thank You for Signing!</h3>
+                            <p>Your signature has been recorded. Share this petition to increase our impact.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="share-section">
+        <div class="container">
+            <h2>Spread the Word</h2>
+            <p style="margin-bottom: 30px; font-size: 1.1rem;">Help us reach our goal by sharing this petition with your network.</p>
+            <div class="share-buttons">
+                <a href="#" class="share-btn facebook" onclick="shareOnFacebook(); return false;">
+                    📘 Share on Facebook
+                </a>
+                <a href="#" class="share-btn twitter" onclick="shareOnTwitter(); return false;">
+                    🐦 Share on Twitter
+                </a>
+                <a href="#" class="share-btn email" onclick="shareViaEmail(); return false;">
+                    ✉️ Share via Email
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p><strong>Stop AB1421 Coalition</strong></p>
+            <p>Contact: info@stopab1421.org</p>
+            <p class="disclaimer">
+                This petition is organized by concerned California citizens. By signing, you consent to your name, city, and state being shared with California legislators and relevant officials. Your email and phone number will not be publicly shared. We respect your privacy and will not sell or share your information with third parties.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Signature counter animation
+        let currentCount = 0;
+        const targetCount = 4782; // Starting count
+        const goal = 10000;
+
+        function animateCount() {
+            const increment = Math.ceil(targetCount / 50);
+            const counter = setInterval(() => {
+                currentCount += increment;
+                if (currentCount >= targetCount) {
+                    currentCount = targetCount;
+                    clearInterval(counter);
+                }
+                document.getElementById('signatureCount').textContent = currentCount.toLocaleString();
+                const progress = Math.round((currentCount / goal) * 100);
+                document.getElementById('goalProgress').textContent = progress + '%';
+            }, 30);
+        }
+
+        // Run animation on load
+        window.addEventListener('load', animateCount);
+
+        // Form submission
+        document.getElementById('petitionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                city: document.getElementById('city').value,
+                zipCode: document.getElementById('zipCode').value,
+                comments: document.getElementById('comments').value,
+                consent: document.getElementById('consent').checked,
+                updates: document.getElementById('updates').checked,
+                timestamp: new Date().toISOString()
+            };
+
+            // Disable submit button
+            const submitBtn = document.querySelector('.submit-btn');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Processing...';
+
+            // Simulate submission (you'll need to replace this with actual backend logic)
+            setTimeout(() => {
+                // Show success message
+                document.getElementById('successMessage').style.display = 'block';
+                
+                // Update counter
+                targetCount++;
+                document.getElementById('signatureCount').textContent = targetCount.toLocaleString();
+                const progress = Math.round((targetCount / goal) * 100);
+                document.getElementById('goalProgress').textContent = progress + '%';
+                
+                // Log data (in production, send to server)
+                console.log('Petition signed:', formData);
+                
+                // You could send to a server here:
+                // fetch('/api/submit-petition', {
+                //     method: 'POST',
+                //     headers: { 'Content-Type': 'application/json' },
+                //     body: JSON.stringify(formData)
+                // });
+
+                // Reset form
+                this.reset();
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Sign Petition Now';
+
+                // Scroll to success message
+                document.getElementById('successMessage').scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'nearest' 
+                });
+            }, 1500);
+        });
+
+        // Share functions
+        function shareOnFacebook() {
+            const url = encodeURIComponent(window.location.href);
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+        }
+
+        function shareOnTwitter() {
+            const text = encodeURIComponent('Join me in opposing AB1421! Sign the petition:');
+            const url = encodeURIComponent(window.location.href);
+            window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+        }
+
+        function shareViaEmail() {
+            const subject = encodeURIComponent('Sign the Petition to Stop AB1421');
+            const body = encodeURIComponent(`I just signed a petition opposing AB1421 and I think you should too. Every signature counts!\n\nLearn more and sign here: ${window.location.href}`);
+            window.location.href = `mailto:?subject=${subject}&body=${body}`;
+        }
+
+        // Update days remaining countdown
+        function updateDaysRemaining() {
+            const deadline = new Date('2026-02-19'); // Set your deadline
+            const today = new Date();
+            const daysLeft = Math.ceil((deadline - today) / (1000 * 60 * 60 * 24));
+            document.getElementById('daysLeft').textContent = Math.max(0, daysLeft);
+        }
+
+        updateDaysRemaining();
+    </script>
+</body>
+</html>
